@@ -1,0 +1,17 @@
+{
+  "editor.formatOnSave": true,
+  "cSpell.words": [
+    "Interop",
+    "browserslist",
+    "commitlint",
+    "contenthash",
+    "crossorigin",
+    "devtool",
+    "pathinfo",
+    "pixi",
+    "qbatoru",
+    "subresource"
+  ],
+  "npm.packageManager": "yarn",
+  "npm.enableScriptExplorer": true
+}
