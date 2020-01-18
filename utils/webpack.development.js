@@ -1,40 +1,37 @@
 module.exports = () => ({
-    config: {
-        devtool: 'eval-source-map',
-        module: {
-            rules: [
-                {
-                    test: /\.tsx?$/,
-                    exclude: /node_modules/,
-                    use: [
-                        {
-                            loader: 'cache-loader',
-                            options: {
-                                cacheDirectory: '.cache'
-                            }
-                        },
-                        'babel-loader'
-                    ]
-                },
-                {
-                    test: /\.(png|jpe?g|gif)$/i,
-                    loader: 'file-loader',
-                    options: {
-                        name: '[path][name].[ext]'
+    devtool: 'eval-source-map',
+    module: {
+        rules: [
+            {
+                test: /\.tsx?$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'cache-loader',
+                        options: {
+                            cacheDirectory: '.cache'
+                        }
                     },
-                    sideEffects: true
-                }
-            ]
-        },
-        plugins: [],
-        output: {
-            pathinfo: false
-        },
-        optimization: {
-            removeAvailableModules: false,
-            removeEmptyChunks: false,
-            splitChunks: false
-        }
+                    'babel-loader'
+                ]
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                loader: 'file-loader',
+                options: {
+                    name: '[path][name].[ext]'
+                },
+                sideEffects: true
+            }
+        ]
     },
-    htmlWebpackPluginOptions: {}
+    plugins: [],
+    output: {
+        pathinfo: false
+    },
+    optimization: {
+        removeAvailableModules: false,
+        removeEmptyChunks: false,
+        splitChunks: false
+    }
 });

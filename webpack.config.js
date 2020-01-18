@@ -9,7 +9,7 @@ const env = {
     mode: process.env.NODE_ENV
 };
 
-const { config, htmlWebpackPluginOptions } = require(`./utils/webpack.${env.mode}.js`)(env);
+const config = require(`./utils/webpack.${env.mode}.js`)(env);
 
 module.exports = () => {
     const { mode } = env;
@@ -38,8 +38,7 @@ module.exports = () => {
                     meta: {
                         viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no',
                         'theme-color': '#4285f4'
-                    },
-                    ...htmlWebpackPluginOptions
+                    }
                 }),
                 new WebpackPwaManifest({
                     name: 'qbatoru',
