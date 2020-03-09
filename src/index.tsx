@@ -1,6 +1,6 @@
 import jss from './jss';
 import { render } from 'solid-js/dom';
-import bunny from './bunny.png';
+import { Board } from './components/board';
 
 const styles = jss.createStyleSheet({
     '@global': {
@@ -20,12 +20,18 @@ interface HelloMessageProps {
 }
 
 const HelloMessage = (props: HelloMessageProps) => (
-    <div className={styles.classes.helloMessage}>
-        Hello {props.name} <img src={bunny}></img>
-    </div>
+    <div className={styles.classes.helloMessage}>Hello {props.name}</div>
 );
 
-render(() => <HelloMessage name="World" />, document.getElementById('root') as HTMLElement);
+render(
+    () => (
+        <>
+            <HelloMessage name="World" />
+            <Board />
+        </>
+    ),
+    document.getElementById('root') as HTMLElement
+);
 
 if (process.env.NODE_ENV === 'production') {
     if ('serviceWorker' in navigator) {
