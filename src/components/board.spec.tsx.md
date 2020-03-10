@@ -1,4 +1,4 @@
-# Snapshot report for `src/components/board/board.spec.tsx`
+# Snapshot report for `src/components/board.spec.tsx`
 
 The actual snapshot is saved in `board.spec.tsx.snap`.
 
